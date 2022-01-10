@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background:url(https://wallpapercave.com/wp/wp5026434.jpg);
+  font-family: Trebuchet MS, Helvetica;
+}
+
+header {
+  width: 100%;
+  padding: 10px 0.5% 0px 0.5%;
+  background: transparent;
+  float: left;
+  position: fixed;
+}
+
+header #logo {
+  
+  color: white;
+  cursor: pointer;
+  position: relative;
+  left:640px
+
+  
+}
+
+header #logo span {
+  font-size: 1.7em;
+  line-height: 45 px;
+  margin-left: 40px;
+  font-family: 'Suez One', serif;
+}
+
+@media (min-width: 701px) {
+  #logo {
+    float: left;
+    width: 30%;
+    font-size: 1.1em;
+  }
+
+  #about {
+    float: right;
+    width: 67%;
+  }
+}
+
+@media (max-width: 700px) {
+  #logo {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.5em;
+    
+  }
+
+  #about {
+    float: left;
+    width: 100%;
+  }
+}
+
+#about {
+  text-align: center;
+  font-size: 1em;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+#about > a {color: #fff}
+
+#about > a:hover {
+  color: #b0b0b0;
+  text-decoration: underline;
+}
+
+#about > a:not(:last-child) {
+  margin-right: 7%;
+}
+
+/* Стили для фиксированной шапки */
+
+.fixed {
+  z-index: 5000;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+header.fixed #logo {
+  color: #343434;
+}
+
+.fixed #about a {color: #343434}
+.fixed #about a:hover {color: #7c7c7c}
+
+/* Главный блок на сайте */
+
+#top {
+  width: 100%;
+  background-image: url(img/Building_B_of_IAAU.jpg);
+  background-blend-mode: multiply;
+  background-color: #2e3a44;
+  background-size: cover;
+  text-align: center;
+  color:#1f8ee9;
+  padding: 30px;
+}
+
+@media (min-width: 1001px) {
+  #top {
+    font-size: 3em;
+    height: 1000px;
+  }
+}
+.intro3{
+  text-align: center;
+  color: #fff;
+
+}
+.text10{
+  color: #fff;
+}
+.intro2{
+  text-align: center;
+  color: #fff;
+
+}
+.img31{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;}
+.img30{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;}
+
+
+
+
+
+
+
+
+
+  table {
+    border-collapse: collapse;
+  }
+   
+  td, th {
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+  }
+   
+  th {
+    font-weight: bold;
+    background-color: #ffffff;
+  }

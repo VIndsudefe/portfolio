@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aalam</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>About Aalam</span>
+    </div>
+    <!-- <div id="about">
+      <a href="#" title="Возможности" onclick="slowScroll('#main')">Hobby</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+    </div> -->
+  </header>
+
+  <div id="top">
+    <h1>Welcome to my  website!!!</h1>
+    <h3>here I will tell about myself</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro3">
+      <h1>About me</h1>
+   
+    </div>
+    <div class="text10">
+      <span> <h2>My full name is Tashmatov Aalam Okeanovich. I'm 17 years old . I graduated from school in the ninth grade, and I am currently a student. I live in Kyrgyzstan in the city of Bishkek. I am quite outgoing and friendly person. I have a couple of hobbies that I like to do during my free time (you can find out more below). It was not a big introduction to me. If you are interested in learning more about me, then read below ...</h2></span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <div class="intro2"><h1>Hobby</h1></div>
+    
+
+    <div class="img">
+      <div class="img30"><img src="img/pwa_list_rect_1280_1f500f056cef41ea965cb8992183baf6.jpg" alt=""  weight = "500px" height="500px"></div>
+    <div class="text10"><p><h2>  I have been playing chess since childhood. I have participated in many tournaments. Has won many prizes. Now this hobby does not bring me as much pleasure as it used to be. That's why I stopped playing chess so often.</h2></span>
+      </p></div>
+      </div>
+            
+    <div class="img">
+      <div class="img31"><img src="img/most-popular-video-games-of-2020-1582141293.png" alt="" weight="500px" height="375px"></div>
+      
+      <div class="text10"><span><h2> <p>In my free time, I really like to play games. I play games according to my mood. Sometimes I want to have fun with my friends and then I play online games, but sometimes I want to forget about this world and plunge into an exciting story-driven game that is even more interesting than a movie or a good book.</p></h2></span>
+    </div>
+    </div>
+
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+
+<div id="calendar"></div>
+
+<script>
+  function createCalendar(elem, year, month) {
+
+    let mon = month - 1; // месяцы в JS идут от 0 до 11, а не от 1 до 12
+    let d = new Date(year, mon);
+
+    let table = '<table><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>';
+
+    // пробелы для первого ряда
+    // с понедельника до первого дня месяца
+    // * * * 1  2  3  4
+    for (let i = 0; i < getDay(d); i++) {
+      table += '<td></td>';
+    }
+
+    // <td> ячейки календаря с датами
+    while (d.getMonth() == mon) {
+      table += '<td>' + d.getDate() + '</td>';
+
+      if (getDay(d) % 7 == 6) { // вс, последний день - перевод строки
+        table += '</tr><tr>';
+      }
+
+      d.setDate(d.getDate() + 1);
+    }
+
+    // добить таблицу пустыми ячейками, если нужно
+    // 29 30 31 * * * *
+    if (getDay(d) != 0) {
+      for (let i = getDay(d); i < 7; i++) {
+        table += '<td></td>';
+      }
+    }
+
+    // закрыть таблицу
+    table += '</tr></table>';
+
+    elem.innerHTML = table;
+  }
+
+  function getDay(date) { // получить номер дня недели, от 0 (пн) до 6 (вс)
+    let day = date.getDay();
+    if (day == 0) day = 7; // сделать воскресенье (0) последним днем
+    return day - 1;
+  }
+
+  createCalendar(calendar, 2012, 9);
+</script>
+</body>
+</html>
